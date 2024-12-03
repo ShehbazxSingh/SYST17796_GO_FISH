@@ -11,7 +11,8 @@ package ca.sheridancollege.project;
  */
 public abstract class Player 
 {
-    private String playerID; //the unique ID for this player
+    private String playerID;
+	private DeckInHand deckInHand; //the unique ID for this player
     
     /**
      * A constructor that allows you to set the player's unique ID
@@ -23,26 +24,14 @@ public abstract class Player
     }
     
     /**
-     * @return the playerID
-     */
-    public String getPlayerID() 
-    {
-        return playerID;
-    }
-
-    /**
-     * Ensure that the playerID is unique
-     * @param givenID the playerID to set
-     */
-    public void setPlayerID(String givenID) 
-    {
-        playerID = givenID;
-    }
-    
-    /**
      * The method to be instantiated when you subclass the Player class
      * with your specific type of Player and filled in with logic to play your game.
      */
     public abstract void play();
+
+	public void drawFromDeck() {
+		// TODO - implement Player.drawFromDeck
+		throw new UnsupportedOperationException();
+	}
     
 }

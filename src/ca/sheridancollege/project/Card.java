@@ -22,5 +22,26 @@ public abstract class Card
     
     @Override
     public abstract String toString();
+
+	/**
+	 * 
+	 * @param rank
+	 * @param suit
+	 */
+	public Card(String rank, Suit suit) {
+		// TODO - implement Card.Card
+		throw new UnsupportedOperationException();
+	}
+
+	public String getRank() {
+		return this.rank;
+	}
+
+	public Suit getSuit() {
+		return this.suit;
+	}
+
+	private String rank;
+	private Suit suit;
     
 }
