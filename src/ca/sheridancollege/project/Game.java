@@ -14,35 +14,37 @@ import java.util.ArrayList;
  */
 public abstract class Game 
 {
-    private final String gameName;//the title of the game
-    private ArrayList <Player> players;// the players of the game
+
+    private Players players;// the players of the game
+    protected int playerCount;
     
-    public Game(String givenName)
+    public Game(Players players, int playerCount)
     {
-        gameName = givenName;
-        players = new ArrayList();
+        this.players = players;
+        this.playerCount = playerCount;
     }
 
-    /**
-     * @return the gameName
+    
+     /**
+     * @return the playerCount
      */
-    public String getGameName() 
+    public int getPlayerCount() 
     {
-        return gameName;
+        return playerCount;
     }
     
      /**
      * @return the players of this game
      */
-    public ArrayList <Player> getPlayers() 
+    public Players getPlayers() 
     {
-        return players;
+        return this.players;
     }
 
     /**
      * @param players the players of this game
      */
-    public void setPlayers(ArrayList <Player> players) 
+    public void setPlayers(Players players) 
     {
         this.players = players;
     }

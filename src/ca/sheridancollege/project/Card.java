@@ -11,37 +11,39 @@ package ca.sheridancollege.project;
  * should remember to add themselves as a modifier.
  * @author dancye, 2018
  */
-public abstract class Card 
+public class Card 
 {
     //default modifier for child classes
     
+    private Rank rank;
+    private Suit suit;
     /**
      * Students should implement this method for their specific children classes 
      * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
      */
     
-    @Override
-    public abstract String toString();
+    
+    public String toString(){
+        return this.rank +  " "+this.suit;
+    };
 
-	/**
-	 * 
-	 * @param rank
-	 * @param suit
-	 */
-	public Card(String rank, Suit suit) {
-		// TODO - implement Card.Card
-		throw new UnsupportedOperationException();
-	}
+    /**
+     * 
+     * @param rank
+     * @param suit
+     */
+    public Card(Rank rank, Suit suit) {
+            this.rank = rank;
+            this.suit = suit;
+    }
 
-	public String getRank() {
-		return this.rank;
-	}
+    public Rank getRank() {
+            return this.rank;
+    }
 
-	public Suit getSuit() {
-		return this.suit;
-	}
+    public Suit getSuit() {
+            return this.suit;
+    }
 
-	private String rank;
-	private Suit suit;
     
 }

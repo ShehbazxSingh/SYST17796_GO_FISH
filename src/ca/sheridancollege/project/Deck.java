@@ -19,7 +19,15 @@ public class Deck
    
     //The group of cards, stored in an ArrayList
     private ArrayList <Card> cards;
-    
+    /**
+     * 
+     * @param rank
+     * @param suit
+     */
+    public Deck() {
+            this.generateNewDeck();
+    }
+
     /**
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
@@ -34,14 +42,27 @@ public class Deck
         Collections.shuffle(cards);
     }
 
-	public void getTopCard() {
-		// TODO - implement Deck.getTopCard
-		throw new UnsupportedOperationException();
-	}
+    public Card getTopCard() {
+            return cards.removeFirst();
+    }
 
-	public void updateDeck() {
-		// TODO - implement Deck.updateDeck
-		throw new UnsupportedOperationException();
-	}
+    public void updateDeck() {
+            // TODO - implement Deck.updateDeck
+            throw new UnsupportedOperationException();
+    }
+    
+    public void generateNewDeck() {
+        this.cards = new ArrayList<>();
+        for(int i = 0; i < Suit.values().length; i++){
+            for(int j = 0; j< Rank.values().length; j++ ){
+                Card newCard = new Card(Rank.values()[j],Suit.values()[i]);
+                this.cards.addLast(newCard);
+            }
+        }
+    }
+    
+    public void dealCardToPlayer(Player player) {
+        player.addCardtoDeck(this.getTopCard());
+    }
     
 }//end class
